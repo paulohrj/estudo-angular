@@ -6,5 +6,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'primeiro-projeto-angular';
+  
+  vlrInicial: number = 10;
+
+
+  mudarValor(){
+    this.vlrInicial ++;
+  }
 }

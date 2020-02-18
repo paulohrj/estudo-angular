@@ -1,0 +1,15 @@
+<table border="1">
+    <tr>
+        <th>Descrição</th>
+        <th>Prospecto</th>
+        <th>Valor</th>
+    </tr>
+
+    <tr *ngFor="let oportunidade of oportunidade">
+        <td>{{ oportunidade.descricao }}</td>
+        <td>{{ oportunidade.nomeProspecto }}</td>
+        <td>{{ oportunidade.valor }}</td>
+    </tr>
+</table>
+<br/>
+><input type="text"  #varTeste>

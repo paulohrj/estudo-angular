@@ -1,0 +1,67 @@
+<section>
+    <article>
+        <h3>
+            Renderizada por INTERPOLATION: {{ url }}
+            <br>
+            Passando expressão por INTERPOLATION : {{ 10 + 10 }}
+            <br>
+            Somando valor com o resultado da FUCTION: {{ 1 + getValor()}}
+            <br>
+            Utlizando operacoes BOOLEANAS: {{ cursoAngular && getCursoAngular()}}
+            <br>
+            <img src="{{ imgNature }}">
+        </h3>
+    </article>
+    <div>
+        Selecione uma classe:
+        <Select #classe1 (change)="0">
+            <option value="alert-success">Success</option>
+            <option value="alert-info">Info</option>
+            <option value="alert-warning">Warning</option>
+            <option value="alert alert-danger">Danger</option>
+        </Select>
+        <br>
+
+        <div class="alert" role="alert"
+            [class.alert-success]="classe1.value == 'alert-success'">
+            Success
+        </div>
+        <div class="alert" role="alert"
+            [class.alert-success]="classe1.value == 'alert-info'">
+            Info
+        </div>
+        <div class="alert" role="alert">Warning</div>
+        <div class="alert" role="alert">Danger</div>
+
+        <div class="alert {{ classe1.value }}">
+            texto colorido conforme combobox
+        </div>
+    </div>
+    <app-curso [nomeDoCurso]="nomeDoCurso"></app-curso>
+
+    <input type="text"
+    [value]="nome"
+    (input)="nome = $event.target.value"
+    />
+
+    <input type="text"
+    [ngModel]="nome"
+    (ngModelChange)="nome = $event"
+    />
+    
+    <p>O nome é  : {{ nome }}</p>
+
+    <input type="text" [(ngModel)]="nome">
+
+    <p>Voce digou o nome : {{pessoa.nome}} e {{pessoa.idade}} idade</p>
+
+    <input type="text" [(ngModel)]="pessoa.nome">
+    <input type="text" [(ngModel)]="pessoa.idade">
+
+
+</section>
+
+
+
+
+<!--<contador [valor]="10" (modouValor)="onMudouValor($event)"></contador>-->
